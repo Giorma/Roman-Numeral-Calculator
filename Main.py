@@ -10,17 +10,15 @@ ROMAN = [
     (   1, "I"),
 ]
 ###### integer to roman numeral
-
 def int_to_roman(number):
     result = ""
     for (arabic, roman) in ROMAN:
         (factor, number) = divmod(number, arabic)
         result += roman * factor
     return result
-
+######
 
 ###### roman numeral to integer
-
 def roman_to_int(s):
     s = s.upper()
     rom_val = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
@@ -31,6 +29,7 @@ def roman_to_int(s):
         else:
             int_val += rom_val[s[i]]
     return int_val
+######
 
 ###### calculator
 result = 0
@@ -71,3 +70,4 @@ while True:
     else:
         print("Something is Wrong")
         break
+######
