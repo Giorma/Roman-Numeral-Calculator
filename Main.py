@@ -18,11 +18,11 @@ def int_to_roman(number):
         result += roman * factor
     return result
 
-roman_numerals = {"M": 1000,"D": 500,"C":100,"XC":90,"L":50,"XL":40,"X":10,"V":5,"IV":4,"I":1}
 
 ###### roman numeral to integer
 
 def roman_to_int(s):
+    s = s.upper()
     rom_val = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
     int_val = 0
     for i in range(len(s)):
