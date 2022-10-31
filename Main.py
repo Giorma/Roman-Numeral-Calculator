@@ -9,6 +9,7 @@ ROMAN = [
     (   4, "IV"),
     (   1, "I"),
 ]
+rom_val = {'I': 1, 'IV': 4, 'V': 5, 'IX': 9, 'X': 10, 'XL': 40, 'L': 50, 'XC': 90, 'C': 100}
 ###### integer to roman numeral
 def int_to_roman(number):
     result = ""
@@ -21,7 +22,6 @@ def int_to_roman(number):
 ###### roman numeral to integer
 def roman_to_int(s):
     s = s.upper()
-    rom_val = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
     int_val = 0
     for i in range(len(s)):
         if i > 0 and rom_val[s[i]] > rom_val[s[i - 1]]:
@@ -46,6 +46,14 @@ while True:
 
     s = input("Enter Number: ")
 
+    if f.upper() == "VIIII" or s.upper() == "VIIII":
+        print('Roman numeral not exist')
+        break
+
+    if f.upper() == "IIII" or s.upper() == "IIII":
+        print('Roman numeral not exist')
+        break
+
     if opera == '+':
         result = roman_to_int(f) + roman_to_int(s)
         f = int_to_roman(result)
@@ -57,7 +65,7 @@ while True:
         f = int_to_roman(result)
         print(f"Result is: {f}")
 
-    elif opera == '*':
+    elif opera == '*' or opera.lower() == 'x':
         result = roman_to_int(f) * roman_to_int(s)
         f = int_to_roman(result)
         print(f"Result is: {f}")
