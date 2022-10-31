@@ -31,6 +31,12 @@ def roman_to_int(s):
     return int_val
 ######
 
+def ValidationOfRomanNumerals(string):
+
+    import re
+
+    return (bool(re.search(r"^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$", string)))
+
 ###### calculator
 result = 0
 
@@ -46,12 +52,8 @@ while True:
 
     s = input("Enter Number: ")
 
-    if f.upper() == "VIIII" or s.upper() == "VIIII":
-        print('Roman numeral not exist')
-        break
-
-    if f.upper() == "IIII" or s.upper() == "IIII":
-        print('Roman numeral not exist')
+    if ValidationOfRomanNumerals(f.upper()) != True or ValidationOfRomanNumerals(s.upper()) != True:
+        print("Roman numeral not exist")
         break
 
     if opera == '+':
