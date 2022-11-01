@@ -1,15 +1,18 @@
 ROMAN = [
-    ( 100, "C"),
-    (  90, "XC"),
-    (  50, "L"),
-    (  40, "XL"),
-    (  10, "X"),
-    (   9, "IX"),
-    (   5, "V"),
-    (   4, "IV"),
-    (   1, "I"),
+    (100, "C"),
+    (90, "XC"),
+    (50, "L"),
+    (40, "XL"),
+    (10, "X"),
+    (9, "IX"),
+    (5, "V"),
+    (4, "IV"),
+    (1, "I"),
 ]
+
 rom_val = {'I': 1, 'IV': 4, 'V': 5, 'IX': 9, 'X': 10, 'XL': 40, 'L': 50, 'XC': 90, 'C': 100}
+
+
 ###### integer to roman numeral
 def int_to_roman(number):
     result = ""
@@ -17,6 +20,8 @@ def int_to_roman(number):
         (factor, number) = divmod(number, arabic)
         result += roman * factor
     return result
+
+
 ######
 
 ###### roman numeral to integer
@@ -29,14 +34,17 @@ def roman_to_int(s):
         else:
             int_val += rom_val[s[i]]
     return int_val
+
+
 ######
 
 ###### Validation of roman numerals
 def ValidationOfRomanNumerals(string):
-
     import re
 
     return (bool(re.search(r"^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$", string)))
+
+
 ######
 
 ###### calculator
@@ -46,9 +54,9 @@ f = input("Enter Number: ")
 
 while True:
 
-    opera = input("Enter operator: +, -, *, /, to exit enter 0 : ")
+    opera = input("Enter operator: +, -, *, /, to exit enter = : ")
 
-    if opera == '0':
+    if opera == '=':
         print(f"Result is: {f}")
         break
 
